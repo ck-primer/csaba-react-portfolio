@@ -5,7 +5,9 @@ function Layout({ children }) {
   return (
     <>
       <NavBar />
+      <div className="mt-5 container text-center">
       {children}
+      </div>
       <Footer />
     </>
   );
