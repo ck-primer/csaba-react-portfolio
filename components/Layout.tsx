@@ -3,13 +3,13 @@ import NavBar from './NavBar';
 
 function Layout({ children }) {
   return (
-    <>
+    <div style={{minHeight: "100%"}} className="d-flex flex-column text-center">
       <NavBar />
-      <div className="mt-5 container text-center">
+      <main className="mt-3">
       {children}
-      </div>
-      <Footer />
-    </>
+      </main>
+      <Footer/>
+    </div>
   );
 }
 export default Layout;
