@@ -1,9 +1,24 @@
+import {ProviderId} from "firebase/auth";
+import {createContext, useContext} from "react";
+import AddTodo from '../components/AddTodo';
+import ToDoList from "../components/ToDoList";
+import {UserContext} from "../lib/context";
+import {firestore} from "../lib/firebase";
+
+export const TodosContext =createContext();
+
+
+
 function todo() {
+  const { user, username } = useContext(UserContext);
+
   return (
     <>
-      <h1>Todo</h1>
-      <i className="fs-1 bi bi-cone-striped"></i>
-      <h3>Under Construction!</h3>
+
+    <h2>To do list with Firebase</h2>
+      <AddTodo />
+      <ToDoList />
+
     </>
   );
 }

@@ -7,14 +7,11 @@ import { UserContext } from '../lib/context';
 import { useUserData } from '../lib/hooks';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const  userData = useUserData();
+  const userData = useUserData();
+  const { user, username } = userData;
   return (
     <UserContext.Provider value={userData}>
-      {/* <Layout>
-        <Component {...pageProps} />
-      </Layout> */}
-
-      <Login />
+      <Layout>{!user ? <Login /> : <Component {...pageProps} />}</Layout>
     </UserContext.Provider>
   );
 }

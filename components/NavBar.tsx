@@ -21,30 +21,37 @@ function NavBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link href="/todo">
-                <a className="nav-link">Todo</a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/tictactoe">
-                <a className="nav-link">Tic Tac Toe</a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/chat">
-                <a className="nav-link">Chat</a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/wordle">
-                <a className="nav-link">Wordle Clone</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {user ? (
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link href="/serviceworker">
+                  <a className="nav-link">Service worker</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/todo">
+                  <a className="nav-link">Todo</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/tictactoe">
+                  <a className="nav-link">Tic Tac Toe</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/chat">
+                  <a className="nav-link">Chat</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/wordle">
+                  <a className="nav-link">Wordle Clone</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        ) : null}
       </div>
     </nav>
   );
